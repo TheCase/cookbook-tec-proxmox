@@ -11,5 +11,5 @@ if [ ! -e /opt/chef/embedded/bin/berks ] ; then
     ln -s /opt/chef/embedded/bin/berks /usr/local/bin/berks
 fi
 
-berks install 
+berks install && berks vendor /var/chef/cookbooks
 chef-solo -o 'recipe[tec-proxmox]'
